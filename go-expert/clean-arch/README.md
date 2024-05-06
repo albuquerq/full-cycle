@@ -1,6 +1,6 @@
 # Clean Architecture - Orders Service
 
-Desafio do Full Cycle para o módulo de clean architecture.
+Desafio do Full Cycle para o módulo de clean architecture. Esse projeto estende a base de [código criada no curso do Full Cycle](https://github.com/devfullcycle/goexpert/tree/main/20-CleanArch) adicionando o caso de uso de listagem de pedidos e faz pequenos ajustes necessários para o seu funcionamento.
 
 ## Ambiente
 
