@@ -6,24 +6,10 @@ Desafio do Full Cycle para o módulo de clean architecture. Esse projeto estende
 
 A configuração padrão é estabelecida por meio de variáveis de ambiente, essas estão definidas no arquivo `cmd/ordersystem/.env` (ignora-se práticas de segurança por trata-se de um projeto para fins de aprendizagem).
 
-> __Atenção!__ Não há migrações automáticas nesse projeto. Para criar a tabela de `orders`, siga as instruções de [criação da tabela orders](#criação-da-tabela-orders).
 
+### Migrações
 
-### Criação da Tabela `orders`
-
-Para criar a tabela orders suba o ambiente via docker-compose, com o comando:
-
-```shell
-docker-compose up -d
-```
-
-Em seguida conecte-se ao container mysql e execute a ferramenta mysql para criação da tabela via prompt.
-
-```shell
-$ docker-compose exec mysql bash
-$> mysql -proot -uroot orders
-$mysql> CREATE TABLE orders (id varchar(255) NOT NULL, price float NOT NULL, tax float NOT NULL, final_price float NOT NULL, PRIMARY KEY (id));
-```
+As migrações são criadas automaticamente ao inciar a aplicação.
 
 ## Validando REST API
 
