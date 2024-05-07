@@ -10,6 +10,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/albuquerq/full-cycle/go-expert/clean-arch/configs"
 	"github.com/albuquerq/full-cycle/go-expert/clean-arch/internal/event/handler"
+	"github.com/albuquerq/full-cycle/go-expert/clean-arch/internal/infra/database"
 	"github.com/albuquerq/full-cycle/go-expert/clean-arch/internal/infra/graph"
 	"github.com/albuquerq/full-cycle/go-expert/clean-arch/internal/infra/grpc/pb"
 	"github.com/albuquerq/full-cycle/go-expert/clean-arch/internal/infra/grpc/service"
@@ -34,6 +35,11 @@ func main() {
 		panic(err)
 	}
 	defer db.Close()
+
+	err = database.Migrate(db) // Run database migrations.
+	if err != nil {
+		panic(err)
+	}
 
 	rabbitMQChannel := getRabbitMQChannel()
 
